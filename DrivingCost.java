@@ -6,7 +6,10 @@
 // Program: 3
 // IDE: IntelliJ
 
-// Create a new Java program, named HelloWorld
+// Write a java program, named DrivingCost, to compute the driving cost of a trip. 
+//The program prompts the user to enter the distance to drive (in miles) as double value, the fuel efficiency of 
+//the car (mpg) as double value, and the price per gallon (price) as double value. Then the program computes 
+//the cost of the trip and displays the output as follows. 
 
 
 import java.util.Scanner; //import scanner class
@@ -39,3 +42,4 @@ public class DrivingCost
     }
 
 }
+
