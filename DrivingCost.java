@@ -6,6 +6,9 @@
 // Program: 3
 // IDE: IntelliJ
 
+// Create a new Java program, named HelloWorld
+
+
 import java.util.Scanner; //import scanner class
 public class DrivingCost
 {
@@ -34,4 +37,5 @@ public class DrivingCost
                 + tripcost); //print trip cost
 
     }
+
 }
