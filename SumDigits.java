@@ -6,6 +6,10 @@
 // Program: 2
 // IDE: IntelliJ
 
+//Write a java program, named SumDigits, to read from the user an integer number (as numeric value, using integer variable and method nextInt() of the scanner class). 
+//Assume the input value is limited to between 0 and 9999. The program computes and displays the sum of the digits in the number 
+//(Do not use loops or treat the number as string of characters). Manipulate the input number mathematically using proper math operators (division and remainder) to determine the sum of its digits.
+
 import java.util.Scanner; //import scanner class
 public class SumDigits
 {
@@ -30,3 +34,4 @@ public class SumDigits
         System.out.println("The sum of digits is:" + "\t" + sum); //print sum of digits
     }
 }
+
