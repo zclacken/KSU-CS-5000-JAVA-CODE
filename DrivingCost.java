@@ -10,6 +10,7 @@
 //The program prompts the user to enter the distance to drive (in miles) as double value, the fuel efficiency of 
 //the car (mpg) as double value, and the price per gallon (price) as double value. Then the program computes 
 //the cost of the trip and displays the output as follows. 
+// Use Java tabs character (\t) to line-up the outputs after the labels
 
 
 import java.util.Scanner; //import scanner class
@@ -42,4 +43,5 @@ public class DrivingCost
     }
 
 }
+
 
