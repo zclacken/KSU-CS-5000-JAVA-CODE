@@ -15,8 +15,7 @@ public class PasswordTest
         //Define rerun input as string
         String rerun = "y";
         //Create while loop allowing user to rerun the program within
-
-        while(rerun.equalsIgnoreCase("y"))
+        while(rerun.equalsIgnoreCase("y")) //allows user to input y or Y for yes   
         {
             //define password as a string
             String password = "";
@@ -36,40 +35,38 @@ public class PasswordTest
             String verdict = "";;
 
             //for loop to count characters
-            for(int i = 0; i< password.length(); i++)
+            for(int i = 0; i < password.length(); i++)
             {
                 char ch = password.charAt(i);
-                if(Character.isUpperCase(ch))
+                if(Character.isUpperCase(ch)) //count uppercase characters
                 {
                     uppercasecount++;
                 }
-                else if (Character.isLowerCase(ch))
+                else if (Character.isLowerCase(ch)) //count lowercase characters
                 {
                     lowercasecount++;
                 }
-                else if (Character.isDigit(ch))
+                else if (Character.isDigit(ch)) //count digits
                 {
                     digitcount++;
                 }
                 else
                 {
-                    specialcharactercount++;
+                    specialcharactercount++; //count characters that are neither digit nor letter
                 }
             }
-            //Define condition for valid and invalid password
-            if(passwordlength >= 7 &&
-                    lowercasecount >= 1 &&
-                    uppercasecount >= 1 &&
-                    digitcount >= 1 &&
-                    specialcharactercount >= 1)
-            {
-                verdict = "Valid Password";
-            }
-            else
-            {
-                verdict = "Invalid Password";
-            }
 
+
+            //Define condition for valid and invalid password using ternary operator
+            verdict = (passwordlength >= 7 &&
+                    lowercasecount > 0 &&
+                    uppercasecount > 0 &&
+                    digitcount > 0 &&
+                    specialcharactercount > 0)
+                    ? "Valid Password" //Output if true
+                    : "Invalid Password"; //Output if false
+
+            //Print Outputs
             System.out.println("Entered Password:"+ "\t" + password);
             System.out.println("Verdict:" + "\t\t\t" + verdict);
             System.out.println();
