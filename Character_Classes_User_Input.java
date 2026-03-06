@@ -1,6 +1,6 @@
 //Determine the class of a character input by the user
 //there is no way to create a scanner with just a character
-//therefore, you must use String methods 
+//therefore, you must use String methods
 
 import java.util.Scanner;
 
@@ -22,9 +22,13 @@ public class Character_Classes_User_Input
         {
             System.out.println("Character is upper case");
         }
-        else
+        else if(Character.isLowerCase(ch))
         {
             System.out.println("Character is lower case");
+        }
+        else
+        {
+            System.out.println("Not a letter of the alphabet");
         }
     }
 }
