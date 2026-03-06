@@ -4,6 +4,7 @@
 //this is because 5 + 10 equals 15
 //thus, numbers between 5.0 and 14.9999... will be generated
 //to include 15, the addon must be set to 11, since 5 + 11 = 16
+//to specify integer generation: (int)(Math.random()* upperlimit_addon)
 
 public class Generating_Random_Number
 {
