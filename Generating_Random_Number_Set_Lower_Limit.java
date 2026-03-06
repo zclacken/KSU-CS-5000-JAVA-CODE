@@ -19,4 +19,5 @@ public class Generating_Random_Number
 
         System.out.println(randomnumber);
     }
+
 }
