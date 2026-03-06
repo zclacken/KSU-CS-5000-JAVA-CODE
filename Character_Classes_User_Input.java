@@ -17,7 +17,7 @@ public class Character_Classes_User_Input
         char ch = letter.charAt(0);
 
 
-        //determine if the character entered is upper case or lower case
+        //determine if the character entered is upper case, lower case, or not a letter
         if(Character.isUpperCase(ch))
         {
             System.out.println("Character is upper case");
@@ -32,3 +32,4 @@ public class Character_Classes_User_Input
         }
     }
 }
+
