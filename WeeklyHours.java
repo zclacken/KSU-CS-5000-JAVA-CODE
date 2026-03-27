@@ -1,52 +1,65 @@
+import java.util.Scanner;
+
 public class WeeklyHours
 {
     public static void main(String[] args)
     {
-        String[] colTitles = {"Mon","Tue","Wed","Thu","Fri","Sat","Sun"}; //column titles array
-        String[] rowTitles = {"Employee1", "Employee2","Employee3"}; //row titles array
-        int [][] workHours = new int [3][7]; //work hours matrix
+        Scanner input = new Scanner(System.in);
+        String response = "";
 
-        //Populate the table with random numbers
-        for(int i = 0; i < workHours.length; i++)
-            for(int j = 0; j < workHours[i].length; j++)
-                workHours[i][j] = (int)(Math.random() * 11);//generates integers between 0 and 10
-
-        //Print column titles
-        System.out.printf("%-12s",""); //spacing for row titles
-        for(int j = 0; j < colTitles.length; j++)
+        do
         {
-            System.out.printf("%-6s", colTitles[j]); //print column titles and space between titles
-        }
-        System.out.println(); //space to start Employee1 on next line
+            String[] colTitles = {"Mon","Tue","Wed","Thu","Fri","Sat","Sun"}; //column titles array
+            String[] rowTitles = {"Employee1", "Employee2","Employee3"}; //row titles array
+            int [][] workHours = new int [3][7]; //work hours matrix
 
-        //Print row titles
-        for(int i = 0; i < workHours.length; i++)
-        {
-            System.out.print(rowTitles[i] + "\t "); //print row titles and spacing between column 1
-            for(int j = 0; j < workHours[i].length; j++)
+            //Populate the table with random numbers
+            for(int i = 0; i < workHours.length; i++)
+                for(int j = 0; j < workHours[i].length; j++)
+                    workHours[i][j] = (int)(Math.random() * 11);//generates integers between 0 and 10
+
+            //Print column titles
+            System.out.printf("%-12s",""); //spacing for row titles
+            for(int j = 0; j < colTitles.length; j++)
             {
-                System.out.printf("%-6s", workHours[i][j]); //print column elements and spacing between them
+                System.out.printf("%-6s", colTitles[j]); //print column titles and space between titles
             }
-            System.out.println(); //move to the next line
+            System.out.println(); //space to start Employee1 on next line
+
+            //Print row titles
+            for(int i = 0; i < workHours.length; i++)
+            {
+                System.out.print(rowTitles[i] + "\t "); //print row titles and spacing between column 1
+                for(int j = 0; j < workHours[i].length; j++)
+                {
+                    System.out.printf("%-6s", workHours[i][j]); //print column elements and spacing between them
+                }
+                System.out.println(); //move to the next line
+            }
+
+            //Call addHours method
+            int [] totals = addHours(workHours); //Call addHours method
+
+            //print Summary Table
+            System.out.println(); //space between tables
+
+            System.out.println("Employee#   Weekly Hours");
+            System.out.println("----------------------------");
+
+            for(int i = 0; i < rowTitles.length; i++)
+            {
+                System.out.printf("%-12s %d%n", (i + 1), totals[i]);//print spacing, employee number, and sum
+            }
+            System.out.println(); //blank space
+
+            //Sentinel Prompt
+            System.out.println("Rerun the program? (y/n): ");
+            response = input.next();
         }
-
-        //Call addHours method
-        int [] totals = addHours(workHours); //Call addHours method
-
-        //print Summary Table
-        System.out.println(); //space between tables
-
-        System.out.println("Employee#   Weekly Hours");
-        System.out.println("----------------------------");
-
-        for(int i = 0; i < rowTitles.length; i++)
-        {
-            System.out.printf("%-12s %d%n", (i + 1), totals[i]);//print spacing, employee number, and sum
-        }
-        System.out.println(); //blank space
-
+        while(response.equalsIgnoreCase("y"));
     }
 
+    //Create addHours method
     public static int [] addHours(int [][] h)
     {
         int [] totals = new int[h.length];
