@@ -9,9 +9,9 @@ public class Matrix_5_Rows_10_columns
         //left is row count; right is column count
       int [][] grades = new int[5][10];
 
-        //Define formula for populating the matrix
-      for(int i = 0; i < grades.length; i++) //define row values
-          for(int j = 0; j < grades[i].length; j++) //define column values
+        //Define elements for populating the matrix
+      for(int i = 0; i < grades.length; i++) //create rows
+          for(int j = 0; j < grades[i].length; j++) //create columns 
               grades[i][j] = (int)(Math.random() * 100); //define elements
 
         //Populate the matrix and print
