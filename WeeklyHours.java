@@ -1,11 +1,19 @@
-import java.util.Scanner;
+//CS 5000
+//Spring 2026
+//Zara Clacken
+//Dr. Haddad
+//Assignment 7
+//Program #1
+//IDE: IntelliJ
+
+import java.util.Scanner; //import scanner
 
 public class WeeklyHours
 {
     public static void main(String[] args)
     {
-        Scanner input = new Scanner(System.in);
-        String response = "";
+        Scanner input = new Scanner(System.in); //create scanner
+        String response = ""; //create string for user to enter response to prompt
 
         do
         {
@@ -43,8 +51,8 @@ public class WeeklyHours
             //print Summary Table
             System.out.println(); //space between tables
 
-            System.out.println("Employee#   Weekly Hours");
-            System.out.println("----------------------------");
+            System.out.println("Employee#   Weekly Hours");//column titles
+            System.out.println("----------------------------"); //dotted line
 
             for(int i = 0; i < rowTitles.length; i++)
             {
@@ -53,10 +61,10 @@ public class WeeklyHours
             System.out.println(); //blank space
 
             //Sentinel Prompt
-            System.out.println("Rerun the program? (y/n): ");
-            response = input.next();
+            System.out.println("Rerun the program? (y/n): "); //print user prompt
+            response = input.next(); //allow user input
         }
-        while(response.equalsIgnoreCase("y"));
+        while(response.equalsIgnoreCase("y"));//condition for rerunning program
     }
 
     //Create addHours method
@@ -69,7 +77,7 @@ public class WeeklyHours
            int rowTotal = 0; //resets rowTotal so each row gets its own sum
            for(int column = 0; column < h[row].length; column++)
            {
-               rowTotal = rowTotal + h[row][column];
+               rowTotal = rowTotal + h[row][column]; //calculate total hours per employee
            }
            totals[row] = rowTotal;
        }
