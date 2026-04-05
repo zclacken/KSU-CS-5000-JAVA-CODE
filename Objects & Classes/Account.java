@@ -1,3 +1,4 @@
+import java.text.NumberFormat;
 import java.util.Date;
 
 public class Account
@@ -77,5 +78,20 @@ public class Account
         balance = balance + amount;
     }
 
+    //Create method toString()
+    public String toString()
+    {
+        NumberFormat money = NumberFormat.getCurrencyInstance();
 
+        NumberFormat fmt = NumberFormat.getPercentInstance();
+
+        return "Account ID: " + id + "\n" +
+                "Account Balance: " + money.format(balance) + "\n" +
+                "Annual Interest Rate: " + fmt.format((annualInterestRate)) + "\n" +
+                "Monthly Interest: " + money.format(getMonthlyInterest()) + "\n" +
+                "Date Opened: " + dateCreated;
+    }
 }
+
+
+
