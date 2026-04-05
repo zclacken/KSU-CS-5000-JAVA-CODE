@@ -82,16 +82,18 @@ public class Account
     public String toString()
     {
         NumberFormat money = NumberFormat.getCurrencyInstance();
-
         NumberFormat fmt = NumberFormat.getPercentInstance();
+        fmt.setMaximumFractionDigits(1);
 
-        return "Account ID: " + id + "\n" +
-                "Account Balance: " + money.format(balance) + "\n" +
-                "Annual Interest Rate: " + fmt.format((annualInterestRate)) + "\n" +
-                "Monthly Interest: " + money.format(getMonthlyInterest()) + "\n" +
-                "Date Opened: " + dateCreated;
+        return "Account ID: " + "\t\t\t" + id + "\n" +
+                "Account Balance: " + "\t\t" + money.format(balance) + "\n" +
+                "Annual Interest Rate: " + "\t" + fmt.format((annualInterestRate)) + "\n" +
+                "Monthly Interest: " + "\t\t" +money.format(getMonthlyInterest()) + "\n" +
+                "Date Opened: " + "\t\t\t" +dateCreated;
     }
 }
+
+
 
 
 
